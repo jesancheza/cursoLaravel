@@ -1,0 +1,16 @@
+<?php namespace App;
+
+use Iluminate\Database\Eloquent\Model;
+
+class Vehiculo extends Model {
+
+	protected $table = 'vehiculos';
+
+	protected $primaryKey = 'serie';
+
+	protected $fillable = array('color', 'cilindraje', 'potencia', 'peso');
+
+	public function fabricante(){
+		$this->belongsTo('Fabricante');
+	}
+}
