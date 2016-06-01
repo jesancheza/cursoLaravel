@@ -1,11 +1,11 @@
 <?php namespace App;
 
-use Iluminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
 class Fabricante extends Model
 {
 	
-	protected $table = 'fabricantes';
+	protected $table = 'fabricante';
 
 	protected $fillable = array('nombre', 'telefono');
 	

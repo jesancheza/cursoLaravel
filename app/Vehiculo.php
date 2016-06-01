@@ -1,6 +1,6 @@
 <?php namespace App;
 
-use Iluminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
 class Vehiculo extends Model {
 
