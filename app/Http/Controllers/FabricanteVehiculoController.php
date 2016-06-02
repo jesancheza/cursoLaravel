@@ -5,11 +5,11 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use App\Fabricante;
+use App\Vehiculo;
+
 class FabricanteVehiculoController extends Controller {
 
-	public function showAll(){
-		return 'Mostrando todos los vehículos';
-	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -17,7 +17,13 @@ class FabricanteVehiculoController extends Controller {
 	 */
 	public function index($id)
 	{
-		return 'Mostrando todos los vehículos del fabrincate con id '.$id;
+		$fabricante = Fabricante::find($id);
+
+		if (!$fabricante) {
+			response()->json(['mensaje' => 'No se encuentra este fabricante', 'codigo' => 404], 404);
+		}
+
+		return response()->json(['datos' => $fabricante->vehiculos()->get()], 200);
 	}
 
 	/**
