@@ -5,16 +5,19 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class VehiculoController extends Controller {
+class FabricanteVehiculoController extends Controller {
 
+	public function showAll(){
+		return 'Mostrando todos los vehículos';
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($id)
 	{
-		//
+		return 'Mostrando todos los vehículos del fabrincate con id '.$id;
 	}
 
 	/**
@@ -22,9 +25,9 @@ class VehiculoController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create($id)
 	{
-		//
+		return 'Mostrando formulario para agregar vehículo al fabricante con id '.$id;
 	}
 
 	/**
@@ -43,9 +46,9 @@ class VehiculoController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($idFabricante, $idVehiculo)
 	{
-		//
+		return 'Mostrando vehículo '.idVehiculo.' del fabricante '.idFabricante;
 	}
 
 	/**
@@ -54,9 +57,9 @@ class VehiculoController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($idFabricante, $idVehiculo)
 	{
-		//
+		return "Mostrando formulario para editar el vehículo $idVehiculo del fabricante $idFabricante";
 	}
 
 	/**
@@ -65,7 +68,7 @@ class VehiculoController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($idFabricante, $idVehiculo)
 	{
 		//
 	}
@@ -76,7 +79,7 @@ class VehiculoController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($idFabricante, $idVehiculo)
 	{
 		//
 	}
