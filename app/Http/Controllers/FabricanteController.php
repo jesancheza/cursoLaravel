@@ -9,6 +9,11 @@ use App\Fabricante;
 
 class FabricanteController extends Controller {
 
+	public function __construct()
+	{
+		$this->middleware('auth.basic', ['only' => ['store','update','destroy']]);
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -20,23 +25,13 @@ class FabricanteController extends Controller {
 	}
 
 	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		return 'Mostrando un formulario para crear un fabricante';
-	}
-
-	/**
 	 * Store a newly created resource in storage.
 	 *
 	 * @return Response
 	 */
 	public function store()
 	{
-		//
+		return 'Petición recibida';
 	}
 
 	/**
@@ -53,17 +48,6 @@ class FabricanteController extends Controller {
 			return response()->json(['mensaje' => 'No se encuentra el fabricante', 'codigo' => 404],404);
 		}
 		return response()->json(['datos' => $fabricante],200);
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		return 'Mostrando el formulario para editar el fabricante con id '.$id;
 	}
 
 	/**
