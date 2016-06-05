@@ -11,9 +11,11 @@
 |
 */
 
-Route::resource('vehiculos','VehiculoController', ['only' => ['index','show']]);
-Route::resource('fabricantes','FabricanteController', ['except' => ['edit','create']]);
-Route::resource('fabricantes.vehiculos','FabricanteVehiculoController', ['except' => ['show','edit','create']]);
+Route::group(array('prefix' => 'api/1.0'), function(){
+	Route::resource('vehiculos','VehiculoController', ['only' => ['index','show']]);
+	Route::resource('fabricantes','FabricanteController', ['except' => ['edit','create']]);
+	Route::resource('fabricantes.vehiculos','FabricanteVehiculoController', ['except' => ['show','edit','create']]);
+});
 
 Route::pattern('inexistentes', '.*');
 
