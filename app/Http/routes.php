@@ -17,6 +17,11 @@ Route::group(array('prefix' => 'api/1.0'), function(){
 	Route::resource('fabricantes.vehiculos','FabricanteVehiculoController', ['except' => ['show','edit','create']]);
 });
 
+Route::post('oauth/access_token', function()
+{
+	return Response::json(Authorizer::issueAccessToken());
+});
+
 Route::pattern('inexistentes', '.*');
 
 Route::any('/{inexistentes}', function ()
