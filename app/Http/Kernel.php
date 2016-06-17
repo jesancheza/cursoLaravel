@@ -16,7 +16,7 @@ class Kernel extends HttpKernel {
 		'Illuminate\Session\Middleware\StartSession',
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
 		//'App\Http\Middleware\VerifyCsrfToken',
-		'\LucaDegasperi\OAuth2Server\Middleware\OAuthExceptionHandlerMiddleware'
+		\LucaDegasperi\OAuth2Server\Middleware\OAuthExceptionHandlerMiddleware::class,
 	];
 
 	/**
@@ -29,7 +29,11 @@ class Kernel extends HttpKernel {
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'auth.basic.once' => 'App\Http\Middleware\OnceAuth',
 		'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
-		'oauth' => '\LucaDegasperi\OAuth2Server\Middleware\OAuthMiddleware',
+		'csrf' => App\Http\Middleware\VerifyCsrfToken::class,
+		'oauth' => \LucaDegasperi\OAuth2Server\Middleware\OAuthMiddleware::class,
+		'oauth-user' => \LucaDegasperi\OAuth2Server\Middleware\OAuthUserOwnerMiddleware::class,
+		'oauth-client' => \LucaDegasperi\OAuth2Server\Middleware\OAuthClientOwnerMiddleware::class,
+		'check-authorization-params' => \LucaDegasperi\OAuth2Server\Middleware\CheckAuthCodeRequestMiddleware::class,
 	];
 
 }

@@ -145,8 +145,8 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
-		'LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider',
-		'LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider',
+		LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
+		LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
 
 		/*
 		 * Application Service Providers...
@@ -203,7 +203,7 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
-		'Authorizer'=> 'LucaDegasperi\OAuth2Server\Facades\Authorizer',
+		'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
 
 	],
 

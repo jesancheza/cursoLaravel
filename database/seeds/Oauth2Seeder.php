@@ -13,9 +13,9 @@ class Oauth2Seeder extends Seeder {
 	{
 		for ($i=1; $i < 10; $i++) { 
 			DB::table('oauth_clients')->insert([
-				'id'=> 'id$i',
-				'secret' => 'secret$i',
-				'name' => 'name$i'
+				'id'=> "id$i",
+				'secret' => "secret$i",
+				'name' => "name$i"
 			]);
 		}	
 	}
